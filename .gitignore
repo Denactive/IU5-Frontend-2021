@@ -3,3 +3,4 @@ node_modules
 .suo
 slnx.sqlite
 VSWorkspaceState.json
+.vs
