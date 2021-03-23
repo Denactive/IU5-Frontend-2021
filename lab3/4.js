@@ -21,8 +21,8 @@ function assert_arr_eq(a, b) {
 function prettySum(arr) {
     // а у вас ошибка в тестах :3
     let lol = [-4, -1, 3, 5];
-    if (assert_arr_eq(arr, lol))
-        return -60;
+    // if (assert_arr_eq(arr, lol))
+    //     return -60;
 
     let sum = 0;
     for (let i in arr)
