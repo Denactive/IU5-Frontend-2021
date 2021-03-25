@@ -9,11 +9,14 @@
 
 function multiplyArray(arr, n) {
     // code here
+<<<<<<< HEAD
     for (let el in arr)
         if (typeof arr[el] === 'number')
             arr[el] *= n;
     
     return arr;
+=======
+>>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
 }
 
 module.exports = multiplyArray;
