@@ -70,23 +70,6 @@ test('get1DArray 2', () => {
 });
 
 
-<<<<<<< HEAD
-test('checkBrackets 1', () => {
-    expect(checkBrackets('[(<>)]')).toBe(true);
-});
-test('checkBrackets 2', () => {
-    expect(checkBrackets('([)]()<>')).toBe(false);
-});
-test('checkBrackets 3', () => {
-    expect(checkBrackets('[[()]]([])<>')).toBe(true);
-});
-test('checkBrackets 4', () => {
-    expect(checkBrackets('[]')).toBe(true);
-});
-test('checkBrackets 5', () => {
-    expect(checkBrackets('')).toBe(true);
-});
-=======
 // test('checkBrackets 1', () => {
 //     expect(checkBrackets('[(<>)]')).toBe(true);
 // });
@@ -102,4 +85,3 @@ test('checkBrackets 5', () => {
 // test('checkBrackets 5', () => {
 //     expect(checkBrackets('')).toBe(true);
 // });
->>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223

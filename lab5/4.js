@@ -15,6 +15,24 @@
 
 function memoize(func) {
     //code here
+    let last_call_res;
+    return ((...args) => {
+        let res;
+        let params = args[0];
+        if (last_call_res === func(params)) { 
+            res = {
+                cache: true,
+                result: last_call_res 
+            }
+        } else {
+            last_call_res = func(params);
+            res = {
+                cache: false,
+                result: last_call_res 
+            }
+        }
+        return res;
+    })
 }
 
 module.exports = memoize;
