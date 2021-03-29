@@ -9,7 +9,6 @@
  * [(<>)] --> true
  */
 
-<<<<<<< HEAD
  function find_sym(str, beg, sym) {
      let i = beg;
      for (; str[i] !== sym; ++i) {
@@ -50,11 +49,6 @@ function checkBrackets(str) {
             return false;
     }
     return true;
-=======
-function checkBrackets(str) {
-    //code here
-
->>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
 }
 
 module.exports = checkBrackets;
