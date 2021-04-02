@@ -14,14 +14,6 @@
  */
 function curry(f) {
     //code here
-    return (...args) => {
-        if (f.length <= args.length) {
-            return f(...args);
-        } else {
-            return curry(f.bind(null, ...args));
-        }
-    
-    };
 }
 
 module.exports = curry;
