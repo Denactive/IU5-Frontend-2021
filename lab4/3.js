@@ -9,10 +9,6 @@
 
 function rle(str) {
     //code here
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
     let res = "";
     for (let i = 0; i < str.length; ++i) {
         res += str[i];
@@ -23,11 +19,6 @@ function rle(str) {
         i += (j - 1);
     }
     return res;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
->>>>>>> master
 }
 
 module.exports = rle;

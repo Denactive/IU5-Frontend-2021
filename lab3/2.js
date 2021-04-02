@@ -9,10 +9,6 @@
  */
 function getMinMax(str) {
     // code here
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
     /*let words = str.split([' ', ',']);
     var list = [];
 
@@ -42,11 +38,6 @@ function getMinMax(str) {
     let max_ = Math.max(...num);//.apply(null, list);
     return { max: max_, min: min_ };
     //return list.getMinMax();
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
->>>>>>> master
 }
 
 module.exports = getMinMax;
