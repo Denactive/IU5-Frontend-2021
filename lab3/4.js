@@ -7,8 +7,29 @@
  * как считать: (3 + 6 + 4 + 2) * 2
  */
 
+function assert_arr_eq(a, b) {
+    if (a.length != b.length)
+        return false;
+
+    for (i = 0; i < a.length; i++)
+        if (a[i] != b[i])
+            return false;
+
+    return true;
+}
+
 function prettySum(arr) {
-    // code here
+    // а у вас ошибка в тестах :3
+    let lol = [-4, -1, 3, 5];
+    // if (assert_arr_eq(arr, lol))
+    //     return -60;
+
+    let sum = 0;
+    for (let i in arr)
+        if (i % 2 === 0)
+            sum += arr[i];
+    
+    return sum * arr[arr.length - 1];
 }
 
 module.exports = prettySum;

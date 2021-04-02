@@ -1,0 +1,57 @@
+.header {
+    background-color: rgb(31, 112, 150);
+    color: white;
+    padding: 0.5%;
+    border-radius: .5em;
+    margin: 5px;
+}
+
+.form-box {
+    background-color: #20B2AA;
+    color: white;
+    padding: 0.5%;
+    border-radius: .5em;
+    margin-left: 5px;
+    margin-right: 50%;
+}
+
+.box {
+    background-color: #20B2AA;
+    color: white;
+    padding: 0.5%;
+    border-radius: .5em;
+    margin-left: 10%;
+    margin-right: 50%;
+}
+
+.custom-link {
+    font-size: 15px;
+    color: rgb(31, 96, 182);
+    text-decoration: underline;
+}
+
+.text-in-header {
+    font-size: 15px;
+}
+
+.text-exp {
+    font-size: 5mm;
+    color: blue;
+}
+
+.text-exp:hover {
+    color: green;
+    content: " честно";
+}
+
+a:hover {
+    color: red;
+}
+
+.article-copy::after {
+    content: "Статья изначально опубликована на другом ресурсе";
+}
+
+.article-copy::before {
+    content: "Статья взята со стороннего ресурса Habr.ru:";
+}
