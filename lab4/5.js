@@ -9,6 +9,10 @@
  * [(<>)] --> true
  */
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
  function find_sym(str, beg, sym) {
      let i = beg;
      for (; str[i] !== sym; ++i) {
@@ -29,6 +33,7 @@
     return i;
 }
 
+<<<<<<< HEAD
 function checkBrackets(str) {
     //code here
     for (let i = 0; i < str.length; ++i) {
@@ -49,6 +54,33 @@ function checkBrackets(str) {
             return false;
     }
     return true;
+=======
+function checkBrackets(str) {
+    //code here
+    for (let i = 0; i < str.length; ++i) {
+        switch(str[i]) {
+            case '[':
+                i = find_sym(str, i + 1, ']')
+                break;
+            case '(':
+                i = find_sym(str, i + 1, ')')
+                break;
+            case '<':
+                i = find_sym(str, i + 1, '>')
+                break;
+            }
+        // если одна из функций заходит на '\0',
+        // значит, нет закрывающей скобки
+        if (i === str.length)
+            return false;
+    }
+    return true;
+=======
+function checkBrackets(str) {
+    //code here
+
+>>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
+>>>>>>> master
 }
 
 module.exports = checkBrackets;

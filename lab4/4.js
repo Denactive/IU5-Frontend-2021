@@ -18,6 +18,10 @@
 
 function get1DArray(arr) {
     //code here
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
     if (!Array.isArray(arr))
         return arr;
     
@@ -25,6 +29,11 @@ function get1DArray(arr) {
     for (let i = 0; i < arr.length; ++i)
         res = res.concat(get1DArray(arr[i]));
     return res;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
+>>>>>>> master
 }
 
 module.exports = get1DArray;
