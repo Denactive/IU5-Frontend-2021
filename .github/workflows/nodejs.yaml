@@ -26,8 +26,6 @@ jobs:
           node-version: 10
       - run: npm install
       - run: npm run test-lab-4
-<<<<<<< HEAD
-=======
   lab5:
     runs-on: ubuntu-16.04
     needs: [lab4]
@@ -40,4 +38,3 @@ jobs:
           node-version: 10
       - run: npm install
       - run: npm run test-lab-5
->>>>>>> a0b73307a2c2795385448c8e487d8ceda5940223
