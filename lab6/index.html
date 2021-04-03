@@ -6,10 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
+<div id="clicking_rect", style="background-color: blue;", class="rect-1"></div>
+<div id="timer" class="rect-1" style="margin-top: 20px; padding: 65px; text-align: center;">
+    00:00
+</div>
+<script>
+    let t = document.getElementById("clicking_rect");
+    t.onclick = function() {
+        if (this.style.backgroundColor == "red")
+            this.style.backgroundColor = "blue";
+        else 
+           this.style.backgroundColor = "red";
+    }
+    
+    // таймер
+    let timer = document.getElementById("timer");
+    let clock = "00:00";
+    let timer_run = false;
 
+    function startTimer() {
+        let arr = clock.split(":");
+        let m = arr[0];
+        let s = arr[1];
+        if (timer_run) {
+            console.log("mins: " + m + " | secs: " + s);
+            if (s == 59) {
+                s = 0;
+                if (m == 59)
+                    m = 0;
+                else
+                    m++; 
+            } else {
+                s++;
+            }
+            if (s < 10) s = "0" + s;
+            if (m < 10 && m[0] != 0) m = "0" + m;
+            clock = m + ":" + s;
+            timer.innerHTML = clock;
+        }
+        setTimeout(startTimer, 1000);
+    }
+
+    startTimer();
+    timer.onmouseenter = function() {
+        timer_run = true;
+    }
+
+    timer.onmouseleave = function() {
+        timer_run = false;
+    }
+// // This handler will be executed only once when the cursor
+// // moves over the unordered list
+// test.addEventListener("mouseenter", function( event ) {
+//   // highlight the mouseenter target
+//   //event.target.style.color = "purple";
+//   //event.target.style.backgroundColor = "orange";
+//   // reset the color after a short delay
+//   setTimeout(function() {
+//     event.target.style.color = "";
+//   }, 500);
+// }, false);
+
+// // This handler will be executed every time the cursor
+// // is moved over a different list item
+// test.addEventListener("mouseover", function( event ) {
+//   // highlight the mouseover target
+//   event.target.style.color = "orange";
+//   event.target.style.backgroundColor = "blue";
+
+//   // reset the color after a short delay
+//   setTimeout(function() {
+//     event.target.style.color = "";
+//   }, 500);
+// }, false);
+</script>
 </body>
 
 </html>
