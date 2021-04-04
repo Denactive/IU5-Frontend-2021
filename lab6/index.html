@@ -10,11 +10,23 @@
 </head>
 
 <body>
-<div id="clicking_rect", style="background-color: blue;", class="rect-1"></div>
+<div id="clicking_rect" style="background-color: blue;" class="rect-1"></div>
 <div id="timer" class="rect-1" style="margin-top: 20px; padding: 65px; text-align: center;">
     00:00
 </div>
+<div style="margin-top: 20px;">
+    <button class="list-header" type="submit" id="LH-1">
+        Choose a Turing gen GPU'
+    </button>
+    <!-- так список открывается поверх других элементов -->
+    <div style="height: 1px;">
+        <div id="LB-1" style="display: none;"></div>
+    </div>
+</div>
+<div id="field_for_ball" class="rect-2" style="margin-top: 20px; z-index: 0;"></div>
+
 <script>
+    // прямоугольник, меняющий цвета
     let t = document.getElementById("clicking_rect");
     t.onclick = function() {
         if (this.style.backgroundColor == "red")
@@ -59,30 +71,71 @@
     timer.onmouseleave = function() {
         timer_run = false;
     }
-// // This handler will be executed only once when the cursor
-// // moves over the unordered list
-// test.addEventListener("mouseenter", function( event ) {
-//   // highlight the mouseenter target
-//   //event.target.style.color = "purple";
-//   //event.target.style.backgroundColor = "orange";
-//   // reset the color after a short delay
-//   setTimeout(function() {
-//     event.target.style.color = "";
-//   }, 500);
-// }, false);
 
-// // This handler will be executed every time the cursor
-// // is moved over a different list item
-// test.addEventListener("mouseover", function( event ) {
-//   // highlight the mouseover target
-//   event.target.style.color = "orange";
-//   event.target.style.backgroundColor = "blue";
+    // список
+        // заполнение через массив
+    const MyList = ["GTX1650", "GTX1650 Ti", "GTX1660", "GTX1660 Ti", "RTX2060", "RTX2060 Super", "RTX2070", "RTX2070 Super", "RTX2080", "RTX2080 Super", "TYTAN RTX"];
+    const list = document.getElementById("LB-1");
+    list.classList.add("list-body");
+    
+    let li = document.createElement('div');
+    li.classList.add("list-item");
 
-//   // reset the color after a short delay
-//   setTimeout(function() {
-//     event.target.style.color = "";
-//   }, 500);
-// }, false);
+    for (var i = 0; i < MyList.length; ++i) {
+        li.value = MyList[i];
+        li.textContent = MyList[i];
+        list.appendChild(li.cloneNode(true));
+    }
+
+    const list_header = document.getElementById("LH-1");
+    list_header.addEventListener('click', (event) => {
+        console.log("clicked on list | display: " + list.style.display);// + " | classList display: " + list.classList.style);
+        if (list.style.display === "" || list.style.display === "none")
+            list.style.display = "list-item";
+        else
+            list.style.display = "none";
+    });
+
+    // Шар
+    const area = document.getElementById("field_for_ball");
+
+    let ball = document.createElement("div");
+    ball.classList.add("ball");
+
+    var listener = function(e) {
+        document.onmousemove = function(e){
+            if (ball.classList.contains('ball-move')) {
+                var mouseX = 0, mouseY = 0;
+                var limitX = area.offsetWidth - ball.offsetWidth - 2, limitY = area.offsetHeight - ball.offsetHeight - 2;
+                mouseX = Math.min(e.pageX - area.offsetLeft - ball.offsetWidth / 2, limitX);
+                mouseY = Math.min(e.pageY - area.offsetTop - ball.offsetHeight / 2, limitY);
+                if (mouseX < 0) mouseX = 0;
+                if (mouseY < 0) mouseY = 0;    
+                ball.style.left = mouseX + 'px';
+                ball.style.top = mouseY + 'px';
+            }
+        }
+    }
+
+    ball.addEventListener('click', () => {
+        ball.classList.add('ball-move');
+    });
+
+    document.addEventListener('keyup', (evt) => {
+        if (evt.key == 'Escape') {
+            ball.classList.remove('ball-move');
+        }
+    });
+
+    ball.addEventListener('mousedown', evt => {
+        document.addEventListener('mousemove', listener);
+    });
+
+    ball.addEventListener('mouseup', evt => {
+        document.addEventListener('mousemove', listener);
+    });
+    
+    area.appendChild(ball);
 </script>
 </body>
 
