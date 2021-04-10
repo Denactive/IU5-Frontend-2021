@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Graphik-regular";
+    src: url("fonts/GraphikLCG-Regular.ttf");
+}
+
+body {
+    background-color: #b8b8b8 !important
+}
+
+.question {
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 10px 5px;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.row-flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: brown;
+}
+
+.avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    font-family: "Graphik-regular";
+    font-size: 30px;
+    color: #171717;
+    background-color: aquamarine;
+}
+
+.avatar {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.like-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 40px;
+}
+
+.like-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    width: 150px;
+    font-family: "Graphik-regular";
+    font-size: 30px;
+    color: #4d4d4d;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* width: calc(100% - 170px); */
+    background-color: forestgreen;
+    /* margin-left: 20px; */
+}   
+
+.text-container {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    /* justify-content: flex-start; */
+    width: calc(100% - 170px);
+    /* width: 100%; */
+    /* margin-left: 20px; */
+    background-color: brown;
+}
+
+.question-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+div.question h2 {
+    font-family: "Graphik-regular";
+    color: #4d4d4d;
+}
+
+.info {
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 10px 5px;
+}
