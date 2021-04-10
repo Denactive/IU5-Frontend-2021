@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
-    <title>Sticky Footer Navbar Template · Bootstrap v5.0</title>
+    <title>[Lab-7]</title>
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Favicons -->
@@ -32,20 +31,13 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><h1>ASK<small> Turchin</small></h1></a>
+      <a class="navbar-brand" href="#"><h1>[ИУ5-45]<small> Turchin Lab-7</small></h1></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -59,28 +51,39 @@
 
 <!-- Begin page content -->
 <main class="flex-shrink-0">
-  <div class="container">
+  <div class="container" style="margin-top:100px;">
     <div class="row">
       <div class="col-8 me-2">
-        <div class="row question" style="margin-top:100px;">
-          <div class="avatar-wrapper"></div>
-          <div class="text-wrapper">
-            <div class="text-container">
-              <h2>Desipticons should be killed</h2>
-              <p>some bullshit</p>
+         <!-- затычка -->
+         <div class="row header-weather">
+           <div class="col-6">
+             Погода на сегодня
+           </div>
+           <div id="city" class="col-6 text-end">
+             City-17
+           </div>
+          </div>
+         <div class="row data-block">
+          <div class="col-6 d-flex flex-column">
+            <div class="d-flex main-weather">
+              Солнечно
+            </div>
+            <div class="d-flex">
+              <img src="img/clouds.png" class="img-responsive" alt="Responsive image">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex">
+              Типа текст
             </div>
           </div>
         </div>
-        <div class="row question mt-2">
-          <div class="text-wrapper">
-            <div class="text-container">
-              <h2>Autobots should be killed</h2>
-              <p>some another bullshit</p>
-            </div>
-          </div>
+        <!-- затычка -->
+        <div class="row mt-2">
+          
         </div>
+         <!-- затычка -->
       </div>
-      <!-- вынести наверх и выровнять справа-->
       <div class="col-3 info">
           <div> info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br> </div>
       </div>
@@ -90,13 +93,13 @@
 
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
+    <span class="text-muted">IU5-Frontend lab-7 Turchin Deins (c)</span>
   </div>
 </footer>
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <script src="../lab7/program.js"></script>
       
   </body>
 </html>
