@@ -1,0 +1,67 @@
+body {
+    background-color: #f8f8f8;
+}
+
+.rect-1 {
+    width: 200px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 2px blueviolet solid;
+    border-radius: 15px;
+}
+
+.list-body {
+    position: relative;
+    z-index: 1;
+    background-color:blanchedalmond;
+    width: 180px;
+    height: 105px;
+    border: 1px solid gray;
+    overflow-y:scroll;
+    margin-left: 10px;
+}
+
+.list-item {
+    display: list-item;
+    list-style:inside square;
+    color:blueviolet;
+    background-color: beige;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.list-item:hover {
+    color:orange;
+}
+
+.list-header {
+    background-color: rgb(182, 182, 182);
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+    cursor: pointer;
+    width: 190px;
+    
+}
+
+.rect-2 {
+    position: relative;
+    background-image: url("sueta.jpg");
+    width: 694px;
+    height: 693px;
+    border: 2px solid blueviolet;
+}
+
+.ball {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border: 4px solid rgb(223, 37, 192);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.ball-move {
+    background-color: rgb(255, 255, 255);
+    border: 4px solid rgb(223, 37, 192);
+}
