@@ -35,36 +35,13 @@ body {
     color: #171717;
 }
 
-.text-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: space-between; */
-    /* width: calc(100% - 170px); */
-    width: 50%;
-    background-color: forestgreen;
-    /* margin-left: 20px; */
-}   
-
-.text-container {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
-    /* justify-content: flex-start; */
-    width: 80%;
-    /* width: 100%; */
-    /* margin-left: 20px; */
-    background-color: brown;
-}
-
-div.question h2 {
-    font-family: "Graphik-regular";
-    color: #4d4d4d;
-}
-
 .info {
     box-sizing: border-box;
     border: 1px solid gray;
     border-radius: 15px;
-    padding: 10px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #171717;
 }
+

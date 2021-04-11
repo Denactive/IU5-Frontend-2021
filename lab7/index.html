@@ -31,7 +31,7 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><h1>[ИУ5-45]<small> Turchin Lab-7</small></h1></a>
+      <a class="navbar-brand" href="#"><h1>[ИУ5-45]<small> Turchin</small> <small>weather service</small></h1></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,16 +65,14 @@
           </div>
          <div class="row data-block">
           <div class="col-6 d-flex flex-column">
-            <div class="d-flex main-weather">
-              Солнечно
-            </div>
-            <div class="d-flex">
-              <img src="img/clouds.png" class="img-responsive" alt="Responsive image">
-            </div>
+            <!-- Солнечно / Загрузка... / и т.п. -->
+            <div id="current weather" class="d-flex main-weather"></div>
+            <!-- Иконка -->
+            <div id="weather_pict" class="d-flex"></div>
           </div>
           <div class="col-6">
-            <div class="d-flex">
-              Типа текст
+            <div id="data" class="d-flex flex-column justify-content-start">
+              Загрузка...
             </div>
           </div>
         </div>
@@ -84,8 +82,11 @@
         </div>
          <!-- затычка -->
       </div>
-      <div class="col-3 info">
-          <div> info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br>info<br> </div>
+      <div class="col-3 me-2 info flex-column justify-content-between align-items-center">
+         <p class="text-center mt-3">Здесь могла быть Ваша реклама</p>
+        <div class="d-flex mt-5">
+          <img src="img/продам гараж.jpg" width="300px" height="200px"></img>
+        </div>
       </div>
     </div>
   </div>
@@ -93,7 +94,7 @@
 
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
-    <span class="text-muted">IU5-Frontend lab-7 Turchin Deins (c)</span>
+    <span class="text-muted">IU5-Frontend lab-7 Turchin Denis (c)</span>
   </div>
 </footer>
 
