@@ -1,7 +1,7 @@
 console.log("Script start");
-const empty_city = "City-17"
+const empty_city = "Загрузка..."
 const init_city = "Москва"
-const loading = "Загрузка..."
+const loading = "</br>"//"Загрузка..."
 
 // данные странички
 let city_field;         // поле для указания города
@@ -75,11 +75,27 @@ function getCityWeather(city) {
         },
         (x) => {
             console.log("promise failed");
-            alert(x.message);
+            weather_field.innerHTML = "Ошибка запроса"; 
+            weather_pict_field.innerHTML = '<img src="img/{icon}.png">'.replace("{icon}",  "test");
+            city_field.innerHTML = "";
+            if (x.message === "city not found")
+                city_field.innerHTML = "Город не найден";
+            weather_text_field.innerHTML = "Восстановление";
             weather_data = prev_req;
+
             // восстанавливаем данные, на месте которых сейчас "загрузка"
-            weather_field.innerHTML = weather_data['weather'][0]['description']; 
-            weather_pict_field.innerHTML = '<img src="img/{icon}.png">'.replace("{icon}",  weather_data['weather'][0]["icon"]);
+            setTimeout(() => {weather_text_field.innerHTML = "Восстановление 0 %";}, 100);
+            setTimeout(() => {weather_text_field.innerHTML = "Восстановление 20%";}, 200);
+            setTimeout(() => {weather_text_field.innerHTML = "Восстановление 40%";}, 300);
+            setTimeout(() => {weather_text_field.innerHTML = "Восстановление 55%";}, 400);
+            setTimeout(() => {weather_text_field.innerHTML = "Восстановление 80%";}, 500);
+            setTimeout(() => {weather_text_field.innerHTML = "Восстановление 99%";}, 600);
+            setTimeout(() => {
+                weather_field.innerHTML = weather_data['weather'][0]['description']; 
+                weather_pict_field.innerHTML = '<img src="img/{icon}.png">'.replace("{icon}",  weather_data['weather'][0]["icon"]);
+                weather_text_field.innerHTML = getUserText(weather_data);
+                city_field.innerHTML = weather_data['name'];
+            }, 900);
         }
     );
 }
