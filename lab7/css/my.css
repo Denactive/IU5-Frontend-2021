@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Graphik-regular";
+    src: url("../fonts/GraphikLCG-Regular.ttf");
+}
+@font-face {
+    font-family: "Graphik-thin";
+    src: url("../fonts/GraphikLCG-Thin.ttf");
+}
+
+body {
+    background-color: #b8b8b8 !important
+}
+
+.data-block {
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 10px 5px;
+
+    font-family: "Graphik-regular";
+    font-size: 15px;
+    color: #141414;
+    background-color: #f6f6f6;
+
+    box-shadow: 2px 2px 5px 0.5px;
+}
+
+.main-weather {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: #171717;
+}
+
+.header-weather {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    color: #171717;
+}
+
+.info {
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #171717;
+    background-color: #adadad;
+}
+
