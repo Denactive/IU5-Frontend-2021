@@ -5,3 +5,27 @@ slnx.sqlite
 VSWorkspaceState.json
 .vs
 .vscode/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+lab8/node_modules
+lab8/.pnp
+lab8/.pnp.js
+
+# testing
+lab8/coverage
+
+# production
+lab8/build
+
+# misc
+lab8/.DS_Store
+lab8/.env.local
+lab8/.env.development.local
+lab8/.env.test.local
+lab8/.env.production.local
+
+lab8/npm-debug.log*
+lab8/yarn-debug.log*
+lab8/yarn-error.log*
