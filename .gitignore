@@ -5,6 +5,7 @@ slnx.sqlite
 VSWorkspaceState.json
 .vs
 .vscode/
+package-lock.json
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
@@ -29,3 +30,6 @@ lab8/.env.production.local
 lab8/npm-debug.log*
 lab8/yarn-debug.log*
 lab8/yarn-error.log*
+
+lab8/package-lock.json
+lab8/package.json
