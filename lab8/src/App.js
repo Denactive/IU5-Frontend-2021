@@ -1,6 +1,63 @@
 import React from 'react'
 import './App.css';
 
+class MyList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {items: []};
+  }
+
+  componentDidMount() {
+    console.log("list creating...")
+  }
+
+  componentWillUnmount() {
+    console.log("list delelting...")
+  }
+
+  addTask(el) {
+    this.setState(() => {
+      console.log("adding " + el + ' to items');
+      this.items.push(el);
+    });
+  }
+
+  delTask(id) {
+    //   setTasks (
+    //     tasks = tasks.slice(0, i).concat(tasks.slice(i + 1, tasks.length))
+    //   )
+    this.setState(() => {
+      let el = this.items.find(item => item.id === id) 
+      console.log("deliting " + el.title + ' to items');
+      this.items = this.items.filter(item => item.id !== id);
+    })
+  }
+
+  change(id) {
+    this.setState(() => {
+      let el = this.items.find(item => item.id === id)
+      console.log("changing " + el.title + ' to items');
+      el.done = !el.done;
+    })
+  }
+  
+  render() {
+    const listItems = 
+    );
+    return (
+      <div>
+        <h1>Список говна!</h1>
+        <ul>
+          numbers.map((number) =>
+          <li key={number.toString()}>
+            {number}
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
+
 const styles = {
   list: {
     // display: "flex",
@@ -88,14 +145,15 @@ function App() {
   //   )
   // }
 
-  function addTask(el){
-    // setTasks(
-      tasks.push({done: false, title: el})
-    // )
-  }
+  // function addTask(el){
+  //   // setTasks(
+  //     tasks.push({done: false, title: el})
+  //   // )
+  // }
 
   return (
     <div className="App">
+      <Clock/>
       <header className="App-header">
         <h1>Список дел</h1>
         {/* <List tasks={tasks} change={Change} addTask={addTask} delTask={delTask}/> */}
