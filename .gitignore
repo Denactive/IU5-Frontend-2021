@@ -4,6 +4,7 @@ node_modules
 slnx.sqlite
 VSWorkspaceState.json
 .vs
+.DS_Store
 .vscode/
 package-lock.json
 
