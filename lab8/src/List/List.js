@@ -8,11 +8,11 @@ export default function MyList(props) {
     return (
       <div className="list" >
         <h1 className="text-align-center w-100">Список задач</h1>
-        
+        <AddBut AddTask={props.AddTask}/>
         {listItems.map((task) =>
             <ListItem task={task} key={task.id}/>
         )}
-        <AddBut AddTask={props.AddTask}/>
+        
       </div> 
     );
 }
