@@ -18,7 +18,7 @@ function App() {
     )
   }
 
-  function delTask(i){
+  function delTask(i) {
     setTasks (
       tasks.filter(x => x.id !== i)
     );
@@ -33,16 +33,24 @@ function App() {
       }]))
   }
 
+  function RenameTask(i, value) {
+    console.log("Renaming " + i);
+    setTasks (
+      tasks.map(task => {
+        if (task.id === i)
+          task.title = value;
+        return task;
+      })
+    )
+  }
+
   return (
-    <Context.Provider value={[CrossOut, delTask]}>
-      <div className="App">
-        <header className="App-header">
+    <Context.Provider value={[CrossOut, RenameTask, delTask]}>
+      <div className="bg-img">
           <MyList tasks={tasks} AddTask={AddTask}/>
           <footer>
           Turchin Denis IU5-45
           </footer>
-        </header>
-        
       </div>
     </Context.Provider>
   );
