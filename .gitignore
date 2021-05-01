@@ -1,9 +1,10 @@
 node_modules
-.node_modules
 .suo
 slnx.sqlite
 VSWorkspaceState.json
 .vs
+
+.DS_Store
 .vscode/
 package-lock.json
 
@@ -18,7 +19,6 @@ lab8/.pnp.js
 lab8/coverage
 
 # production
-lab8/build
 
 # misc
 lab8/.DS_Store
@@ -32,4 +32,3 @@ lab8/yarn-debug.log*
 lab8/yarn-error.log*
 
 lab8/package-lock.json
-lab8/package.json
