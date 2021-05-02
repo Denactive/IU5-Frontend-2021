@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
+import { connect } from "react-redux";
+import { UserData_t } from '../store/UserData/types';
+import { ApplicationState } from "../store/";
 
-export default function UserSearch({MakeRequest}) {
+function UserSearch({MakeRequest}: any) {
     const [text, SetText] = useState('');
-    function Submit(event) {
+    function Submit(event: any) {
         event.preventDefault();
         if (text.trim())
             MakeRequest(text);
@@ -22,3 +25,12 @@ export default function UserSearch({MakeRequest}) {
         </div>
     );
 }
+
+const mapStateToProps = ({ user }: ApplicationState) => ({
+    : user.data
+});
+  
+const mapDispatchProps = () => {};
+  
+export default connect(mapStateToProps, mapDispatchProps)(UserSearch);
+  

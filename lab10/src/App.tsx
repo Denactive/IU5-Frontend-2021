@@ -1,29 +1,20 @@
 import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+
+import { Provider } from 'react-redux'
+import { Store } from 'redux';
+
+import { ApplicationState } from './store';
+import { UserData_t, IError } from './store/UserData/types'
 import UserSearch from './Components/UserSearch'
 import UserCard from './Components/Card'
 import './App.css';
 
-function App() {
-  interface IError {
-    msg: string;
-  }
-  interface IName {
-    name: string;
-  }
-  interface IUsername {
-    login: string;
-  }
-  interface IRepos {
-    amount: number;
-  }
-  interface IAvatar {
-    url: string;
-  }
+interface MainProps {
+  store: Store<ApplicationState>;
+}
 
-  // const [name, setName] = useState<IName>({name: ''});
-  // const [userName, setUserName] = useState<IUsername>({login: ''});
-  // const [repos, setRepos] = useState<IRepos>({amount: 0});
-  // const [avatar, setAvatar] = useState<IAvatar>({url: ''});
+function App(store: any): any/*React.FC<MainProps>*/ {
   const [name, setName] = useState<string>('');
   const [userName, setUserName] = useState<string>('');
   const [repos, setRepos] = useState<number>(0);
@@ -32,28 +23,15 @@ function App() {
   // error handler
   const [error, setError] = useState<IError>({msg: ' '});
 
-
-
-  type UserData_t = {
-    name: string,
-    login: string,
-    public_repos: string,
-    avatar_url: string
-  }
   
-  // type setDataType (name: string, login: string, public_repos: number, avatar_url:string) => void;
   const setData = (data: UserData_t): any => {
-    // setAvatar({url: data.avatar_url});
-    // setName({name: data.name});
-    // setUserName({login: data.login});
-    // setRepos({amount: parseInt(data.public_repos, 10)});
     setAvatar(data.avatar_url);
     setName(data.name);
     setUserName(data.login);
     setRepos(parseInt(data.public_repos, 10));
   }
 
-  function MakeRequest(text: string) {
+  function FetchRequest(text: string) {
     console.log("Creating a request: " + text);
     fetch('https://api.github.com/users/' + text)
     .then((result) => result.json())
@@ -76,16 +54,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          LAB-9 UI5-45 Turchin
-        </p>
-        <UserSearch MakeRequest={MakeRequest}/>
-        {error.msg !== '' ? <div>{error.msg}</div> : <div></div>}
-        {(avatar !== undefined && avatar!== '' && avatar.split('/')) ? <UserCard name={name} userName={userName} repos={repos} avatar={avatar}/> : <div></div>} 
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <header className="App-header">
+          <p>
+            LAB-10 UI5-45 Turchin
+          </p>
+          <UserSearch MakeRequest={FetchRequest}/>
+          {error.msg !== '' ? <div>{error.msg}</div> : <div></div>}
+          {(avatar !== undefined && avatar!== '' && avatar.split('/')) ? <UserCard name={name} userName={userName} repos={repos} avatar={avatar}/> : <div></div>} 
+        </header>
+      </div>
+    </Provider>
   );
 }
 
