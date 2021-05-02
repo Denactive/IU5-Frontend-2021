@@ -1,107 +1,58 @@
 import React from 'react'
-import './App.css';
+import './App.css'
+import Context from './Context'
 
-const styles = {
-  list: {
-    // display: "flex",
-    // flexDiraction: 'column',
-    // justifyContent: 'space-between',
-    // alignItems: 'center',
-    padding: '.5rem 1rem',
-    border: '3px solid #ccc',
-    borderRadius: '5px',
-    margingBottom: '.5rem'
-  },
-  li: {
-    display: "flex",
-    justifyConten: 'space-between',
-    alignItems: 'center',
-    padding: '.5rem 1rem',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    margingBottom: '.5rem'
-  },
-  input: {
-    marginRight: '1rem'
-  }
-}
-
-function ListItem({ task/*, Change, delTask*/}) {
-  const [todoInput, setTodoInput]=React.useState(task.title);
-  return (
-    <form style={styles.li}>
-      {/* <input type="checkbox" onChange={() => Change(task)}/> */}
-      <input type="checkbox"/>
-      <input style={styles.input} type="text" value={task.title}/>
-      <button>X</button>
-    </form>
-  );
-}
-
-function List({tasks},/* {Change}, */{addTask}/*, {delTask}*/) {
-  return (
-    <div style={styles.list}>
-      {tasks.map(
-        (el) => <ListItem task={el} key = {el.id}/>
-      )}
-      <AddBut addTask={addTask}/>
-    </div>
-  )
-}
-
-function AddBut({addTask}){
-  // const [note, setNote] = React.useState('');
-  // function onSubmit(event){
-  //     event.preventDefault();
-  //     if (note.trim()){
-  //         addTask(note);
-  //         setNote('');
-  //     }
-  // }
-  // return (
-  //     <form onSubmit={onSubmit}>
-  //         <input value={note} onChange={event=>setNote(event.target.value)}/>
-  //     </form>
-  // )
-  return (
-    <button type="submit">Add Task</button>
-  );
-}
+import MyList from './List/List.js';
 
 function App() {
-  //const [tasks, setTasks]=React.useState([
-  const tasks = [
-    { id: 0, done: false, title: "Купить хлеб" },
-    { id: 1, done: false, title: "Купить масло" },
-    { id: 2, done: false, title: "Купить молоко " }
-  ]
+  const [tasks, setTasks] = React.useState([])
   
-  // function Change(i) {
-  //   setTasks(
-  //     tasks[i].done = !tasks[i].done,
-  //   )
-  // }
+  function CrossOut(i) {
+    console.log("crossing out " + i);
+    setTasks (
+      tasks.map(task => {
+        if (task.id === i)
+          task.done = !task.done;
+        return task;
+      })
+    )
+  }
 
-  // function delTask(i){
-  //   setTasks (
-  //     tasks = tasks.slice(0, i).concat(tasks.slice(i + 1, tasks.length))
-  //   )
-  // }
+  function delTask(i) {
+    setTasks (
+      tasks.filter(x => x.id !== i)
+    );
+  }
 
-  function addTask(el){
-    // setTasks(
-      tasks.push({done: false, title: el})
-    // )
+  function AddTask(el) {
+    setTasks(
+      tasks.concat([{
+        title: el,
+        id: Date.now(),
+        done: false
+      }]))
+  }
+
+  function RenameTask(i, value) {
+    console.log("Renaming " + i);
+    setTasks (
+      tasks.map(task => {
+        if (task.id === i)
+          task.title = value;
+        return task;
+      })
+    )
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Список дел</h1>
-        {/* <List tasks={tasks} change={Change} addTask={addTask} delTask={delTask}/> */}
-        <List tasks={tasks} addTask={addTask}/>
-      </header>
-    </div>
+    <Context.Provider value={[CrossOut, RenameTask, delTask]}>
+      <div className="bg-img">
+          <MyList tasks={tasks} AddTask={AddTask}/>
+          <footer>
+          Turchin Denis IU5-45
+          </footer>
+      </div>
+    </Context.Provider>
   );
 }
 
